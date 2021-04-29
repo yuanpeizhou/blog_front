@@ -1,13 +1,18 @@
 <template>
   <div class="contain_body">
     <div class="contain_body_list">
-      <div class="contain_body_list_item" v-for="item in articles" :key="item.id">
+      <div class="contain_body_list_item" v-for="item in articles.data" :key="item.id">
         <h3 class="contain_body_list_item_title">
-          <router-link :to="{ name: 'about', params: { id: item.id } }" class="">{{item.title}}</router-link>
+          <router-link :to="{ name: 'about', params: { id: item.id } }" class="">{{item.article_title}}</router-link>
         </h3>
-        <ArticleImageContent v-if="item.image_url" :article="item"></ArticleImageContent>
-        <ArticleTextContent v-if="!item.image_url" :article="item"></ArticleTextContent>
+        <ArticleImageContent v-if="item.article_cover" :article="item"></ArticleImageContent>
+        <ArticleTextContent v-if="!item.article_cover" :article="item"></ArticleTextContent>
       </div>
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        :total="articles.total">
+      </el-pagination>
     </div>
     <SidebarComponent></SidebarComponent>
   </div>
@@ -26,7 +31,7 @@ export default {
   },
   props: {
     articles:{
-      default: []
+      default: {}
     }
   },
   data(){
@@ -35,7 +40,10 @@ export default {
     }
   },
   methods: {
-
+    
+  },
+  mounted(){
+    console.log(this.articles)
   }
 }
 </script>

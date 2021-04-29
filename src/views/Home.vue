@@ -1,12 +1,9 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <HeaderComponent title="test"/>
+    <HeaderComponent index="1"></HeaderComponent>
     <div class="contain"> 
       <BannerComponent title="test"/>
       <ContainComponent :articles="articles"/>
-      
     </div>
     <!-- <FooterComponent/> -->
   </div>

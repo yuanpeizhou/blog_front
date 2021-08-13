@@ -5,46 +5,56 @@ const api_host_local = 'http://192.168.6.19/blog_server/public/'
 // const api_host_company = 'http://192.168.6.19/book_spider/public/'
 
 
-function httpRequest(url,method = 'get',params,charset,callback){
+function httpRequest(url, method = 'get', params, charset, callback) {
   var apiUrl = ''
-  if(url.indexOf('http') != -1){
+  if (url.indexOf('http') != -1) {
     apiUrl = url
-  }else{
+  } else {
     apiUrl = api_host_local + url
   }
-  if(method === 'get'){
-      axios.get(apiUrl, {
-        params: params
-      })
+  if (method === 'get') {
+    axios.get(apiUrl, {
+      params: params
+    })
       .then(function (response) {
         callback(response.data.data)
       })
       .catch(function (error) {
         console.log(error);
       });
-  }else{
+  } else {
     axios.post(apiUrl, params)
-    .then(function (response) {
-      callback(response.data)
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        callback(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
 }
 
-
-
-/**获取章节列表 */
-export function getChapterList(params,callback,charset="utf-8"){
-  return httpRequest('api/article/list','get',params,charset,callback)
+/**文章列表 */
+export function getArticleList(params, callback) {
+  return httpRequest('api/articles', 'get', params, charset = 'utf-8', callback)
 }
 
-/**章节数据爬取 */
-export function handleChapterSpider(params,callback,charset="utf-8"){
-  return httpRequest('api/article/list','get',params,charset,callback)
+/**文章详情 */
+export function getArticleInfo(id, params, callback) {
+  return httpRequest('api/articles' + id, 'get', params, charset = 'utf-8', callback)
 }
+
+
+
+// /**获取章节列表 */
+// export function getChapterList(params, callback, charset = "utf-8") {
+//   return httpRequest('api/article/list', 'get', params, charset, callback)
+// }
+
+// /**章节数据爬取 */
+// export function handleChapterSpider(params, callback, charset = "utf-8") {
+//   return httpRequest('api/article/list', 'get', params, charset, callback)
+// }
 
 // /**获取直播推流 */
 // export function getVideoList(params,callback,charset="utf-8"){

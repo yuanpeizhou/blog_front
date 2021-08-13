@@ -14,6 +14,12 @@
     </div>
     <div class="user_info">
       <div class="user_info_title">个人信息</div>
+      <div>
+        <p>姓名：周源培</p>
+        <p>职业：后端工程师(PHP)</p>
+        <p>邮箱：1181588051@qq.com</p>
+        <p>公司：成都青瓷科技</p>
+      </div>
     </div>
 
   </div>
@@ -70,10 +76,12 @@ export default {
 }
 .user_info{
   height: 100%;
-  background: #9f37d6;
+  /* background: #9f37d6; */
+  background: #ffffff;
   flex-basis: 24%;
   padding: 1rem;
   box-sizing: border-box;
+  text-align: left;
 }
 .user_info_title{
   font-size: 1.2rem;

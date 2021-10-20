@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode : 'history',
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -13,8 +13,13 @@ export default new Router({
     },
     {
       path: '/articleList',
-      name : 'articleList',
+      name: 'articleList',
       component: () => import(/* webpackChunkName: "about" */ './views/ArticleList.vue')
+    },
+    {
+      path: '/articleInfo/:id',
+      name: 'articleInfo',
+      component: () => import(/* webpackChunkName: "about" */ './views/ArticleInfo.vue')
     },
     {
       path: '/about',

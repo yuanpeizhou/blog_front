@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <meta name="referrer" content="no-referrer" />
     <router-view></router-view>
   </div>
 </template>

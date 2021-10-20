@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <HeaderComponent index="1"></HeaderComponent>
+    <!-- <HeaderComponent index="1"></HeaderComponent> -->
     <div class="contain"> 
-      <BannerComponent title="test"/>
-      <ContainComponent :articles="articles"/>
+      <!-- <BannerComponent title="test"/> -->
+      <ContainComponent/>
     </div>
     <!-- <FooterComponent/> -->
   </div>
@@ -25,35 +25,6 @@ export default {
   },
   data(){
     return {
-      articles: [
-        {
-          id: 1,
-          title: '测试标题1',
-          content: '复活卡后方可好看发款到发货卡的很疯狂发快递好看',
-          image_url: 'http://www.yangqq.com/d/file/news/life/2018-04-27/762f99f369ae786f970477feeb3b9d77.jpg',
-          time: '2019-12-21',
-          read: 23,
-          heart: 15
-        },
-        {
-          id: 2,
-          title: '测试标题2',
-          content: '复活卡后方可好看发款到发货卡的很疯狂发快递好看',
-          image_url: '',
-          time: '2019-12-22',
-          read: 27,
-          heart: 15
-        },
-        {
-          id: 3,
-          title: '测试标题3',
-          content: '复活卡后方可好看发款到发货卡的很疯狂发快递好看',
-          image_url: 'http://www.yangqq.com/d/file/news/life/2018-04-27/762f99f369ae786f970477feeb3b9d77.jpg',
-          time: '2019-12-22',
-          read: 27,
-          heart: 15
-        }
-      ]
     }
   },
   mounted(){

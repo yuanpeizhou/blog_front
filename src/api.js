@@ -1,7 +1,7 @@
 
 import axios from 'axios'
 
-const api_host_local = 'http://192.168.6.19/blog_server/public/'
+const api_host_local = 'http://192.178.30.228/book_spider/public/blog/'
 // const api_host_company = 'http://192.168.6.19/book_spider/public/'
 
 
@@ -35,13 +35,13 @@ function httpRequest(url, method = 'get', params, charset, callback) {
 }
 
 /**文章列表 */
-export function getArticleList(params, callback) {
-  return httpRequest('api/articles', 'get', params, charset = 'utf-8', callback)
+export function getArticleList(params, callback, charset = 'utf-8') {
+  return httpRequest('articles', 'get', params, charset, callback)
 }
 
 /**文章详情 */
-export function getArticleInfo(id, params, callback) {
-  return httpRequest('api/articles' + id, 'get', params, charset = 'utf-8', callback)
+export function getArticleInfo(id, params, callback, charset = 'utf-8') {
+  return httpRequest('articles/' + id, 'get', params, charset, callback)
 }
 
 

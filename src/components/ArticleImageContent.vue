@@ -2,12 +2,12 @@
   <div class="contain_body_list_item_content">
     <div class="contain_body_list_item_image">
       <router-link :to="{ name: 'about', params: { id: article.id } }" class="">
-        <img :src="article.article_cover" class="contain_image" alt='图片加载失败'/>
+        <img :src="article.cover" class="contain_image" alt='图片加载失败'/>
       </router-link>
     </div>
     <div class="contain_body_list_item_text">
-      <div class="contain_body_list_item_describe">
-        <p>{{article.article_content}}</p>
+      <div class="contain_body_list_item_describe" :onclick="goToInfo(article.id)">
+        <p>{{article.content}}</p>
       </div>
       <div class="contain_body_list_item_tag_list">
         <div class="contain_body_list_item_tag_list_item">
@@ -16,11 +16,11 @@
         </div>
         <div class="contain_body_list_item_tag_list_item">
           <div class="tag_icon read"></div>
-          <span class="tag_text">{{article.article_browse}}</span>
+          <span class="tag_text">{{article.views}}</span>
         </div>
         <div class="contain_body_list_item_tag_list_item">
           <div class="tag_icon heart"></div>
-          <span class="tag_text">{{article.article_praise}}</span>
+          <span class="tag_text">{{article.praises}}</span>
         </div>
       </div>
     </div>
@@ -38,6 +38,11 @@ export default {
       }
     }
   },
+  methods:{
+    goToInfo(id){
+      console.log('点击',id)
+    }
+  }
 }
 </script>
 

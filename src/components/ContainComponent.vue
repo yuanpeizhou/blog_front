@@ -3,10 +3,10 @@
     <div class="contain_body_list">
       <div class="contain_body_list_item" v-for="item in articles.data" :key="item.id">
         <h3 class="contain_body_list_item_title">
-          <router-link :to="{ name: 'about', params: { id: item.id } }" class="">{{item.article_title}}</router-link>
+          <router-link :to="{ name: 'articleInfo', params: { id: item.id } }" class="">{{item.title}}</router-link>
         </h3>
-        <ArticleImageContent v-if="item.article_cover" :article="item"></ArticleImageContent>
-        <ArticleTextContent v-if="!item.article_cover" :article="item"></ArticleTextContent>
+        <ArticleImageContent v-if="item.cover" :article="item"></ArticleImageContent>
+        <ArticleTextContent v-if="!item.cover" :article="item"></ArticleTextContent>
       </div>
       <el-pagination
         background
@@ -14,7 +14,7 @@
         :total="articles.total">
       </el-pagination>
     </div>
-    <SidebarComponent></SidebarComponent>
+    <!-- <SidebarComponent></SidebarComponent> -->
   </div>
 </template>
 
@@ -22,6 +22,7 @@
 import SidebarComponent from '@/components/SidebarComponent.vue'
 import ArticleImageContent from '@/components/ArticleImageContent'
 import ArticleTextContent from '@/components/ArticleTextContent'
+import {getArticleList} from '../api';
 export default {
   name: 'BannerComponent',
   components: {
@@ -30,20 +31,27 @@ export default {
     ArticleTextContent
   },
   props: {
-    articles:{
-      default: {}
-    }
   },
   data(){
     return {
-
+      articles:{
+      }
     }
   },
   methods: {
-    
+
   },
   mounted(){
-    console.log(this.articles)
+    const _this = this
+    const params = {
+      page : 1,
+      limit : 10,
+      type : 'page'
+    }
+
+    getArticleList(params,function(res){
+      _this.articles = res
+    })
   }
 }
 </script>

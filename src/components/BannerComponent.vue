@@ -3,11 +3,11 @@
     <div class="carousel">
       <el-carousel trigger="click" height="242px">
         <el-carousel-item v-for="item in 3" :key="item">
-          <img src="http://www.yangqq.com/skin/852/images/banner01.jpg"/>
+          <img src="https://fs.img4399.com/news/2021/09/02/7f8da74e937f0fd1123afb84b14452c0~s550"/>
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="article_box">
+    <!-- <div class="article_box">
       <div class="article_box_title" v-for="item in article_data" :key="item.id"> 
         <h3>123</h3>
       </div>
@@ -20,7 +20,7 @@
         <p>邮箱：1181588051@qq.com</p>
         <p>公司：成都青瓷科技</p>
       </div>
-    </div>
+    </div> -->
 
   </div>
   

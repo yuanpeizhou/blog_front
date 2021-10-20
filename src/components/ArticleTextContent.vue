@@ -2,7 +2,7 @@
   <div class="contain_body_list_item_content">
     <div class="contain_body_list_item_text">
       <div class="contain_body_list_item_describe">
-        <p>{{article.article_content}}</p>
+        <p>{{article.content}}</p>
       </div>
       <div class="contain_body_list_item_tag_list">
         <div class="contain_body_list_item_tag_list_item">
@@ -11,11 +11,11 @@
         </div>
         <div class="contain_body_list_item_tag_list_item">
           <div class="tag_icon read"></div>
-          <span class="tag_text">{{article.article_browse}}</span>
+          <span class="tag_text">{{article.views}}</span>
         </div>
         <div class="contain_body_list_item_tag_list_item">
           <div class="tag_icon heart"></div>
-          <span class="tag_text">{{article.article_praise}}</span>
+          <span class="tag_text">{{article.praises}}</span>
         </div>
       </div>
     </div>
